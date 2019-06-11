@@ -1,0 +1,4 @@
+---------------------------------------------------------------------------------------------------------------
+Manifests for these static pods are installed by default by the openshift-ansible installer, 
+located in the /etc/origin/node/pods directory on the master host.
+---------------------------------------------------------------------------------------------------------------
