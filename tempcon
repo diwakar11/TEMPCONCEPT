@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------------------
+Even with control plane components running as static pods, master hosts still source their configuration from 
+the /etc/origin/master/master-config.yaml file.
+
+---------------------------------------------------------------------------------------------------------------
 Manifests for these static pods are installed by default by the openshift-ansible installer, 
 located in the /etc/origin/node/pods directory on the master host.
+
+These pods have the following hostPath volumes defined:
+
+/etc/origin/master	
+Contains all certificates, configuration files, and the admin.kubeconfig file.
+
+/var/lib/origin	
+Contains volumes and potential core dumps of the binary.
+
+/etc/origin/cloudprovider	
+Contains cloud provider specific configuration (AWS, Azure, etc.).
+
+/usr/libexec/kubernetes/kubelet-plugins	
+Contains additional third party volume plug-ins.
+
+/etc/origin/kubelet-plugins	
+Contains additional third party volume plug-ins for system containers.
 ---------------------------------------------------------------------------------------------------------------
+
